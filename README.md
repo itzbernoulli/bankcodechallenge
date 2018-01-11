@@ -1,11 +1,11 @@
 # Bank Code Challenge
 Coding challenge task is to create backend for a simple "banking" application
 
-All API endpoionts are prefixed with [link](http://localhost:8080/api/) 
+All API endpoionts are prefixed with [http://localhost:8080/api/](http://localhost:8080/api/) 
 
-and are documented using SWAGGER-2 and can be found in the URL below
+and are documented using SWAGGER-2 and can be found in the URL below after building the project.
 
-[link](http://localhost:8080/swagger-ui.html)
+[http://localhost:8080/api/](http://localhost:8080/swagger-ui.html)
 
 
 # Technology stack
