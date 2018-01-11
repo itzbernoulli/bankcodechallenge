@@ -41,7 +41,7 @@ public class CustomerController {
 	    return customerRepository.save(customer);
 	}
 		
-	 // Get a Single Customer
+	 // Get a Single Customer with all transactions
 	@GetMapping("/customers/{id}")
 	public ResponseEntity<Customer> getTransactions(@PathVariable(value = "id") int customerId) {
 	    Customer customer = customerRepository.findOne(customerId);
@@ -51,6 +51,7 @@ public class CustomerController {
 	    return ResponseEntity.ok().body(customer);
 	}
 
+	//Make a deposit
 	@PostMapping("/deposit/{id}")
 	public ResponseEntity<Customer> makeDeposit(@PathVariable(value = "id") int customerId, @RequestBody Map<String, String> json) {
 		Double amount =  Double.parseDouble(json.get("amount"));
@@ -71,6 +72,7 @@ public class CustomerController {
 	    
 	}
 	
+	//Make a withdrawal
 	@PostMapping("/withdrawal/{id}")
 	public ResponseEntity<Customer> makeWithdrawal(@PathVariable(value = "id") int customerId, @RequestBody Map<String, String> json) {
 		Double amount =  Double.parseDouble(json.get("amount"));
@@ -91,6 +93,7 @@ public class CustomerController {
 	    
 	}
 		
+	//Get customer account balance
 	@GetMapping("/balance/{id}")
 	public ResponseEntity<String> getCustomerBalance(@PathVariable(value = "id") int customerId) {
 		Customer customer = customerRepository.findOne(customerId);
